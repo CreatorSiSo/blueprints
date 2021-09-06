@@ -1,0 +1,95 @@
+:root {
+    --info-clr:      hsl(205, 85%, 65%);
+    --bg-clr:       hsl(0, 0%, 10%);
+    --grid-clr:     hsl(0, 0%, 14%);
+    --grid-size:    5em;
+    --grid-lines:   3px;
+}
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+}
+
+.blueprint {
+    width: 100vw;
+    height: 100vh;
+    min-width: 300px;
+    background:
+        repeating-linear-gradient(
+            to right,
+            var(--grid-clr) 0,
+            var(--grid-clr) calc(var(--grid-lines) / 1.5),
+            transparent var(--grid-lines),
+            transparent var(--grid-size)
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            var(--grid-clr) 0,
+            var(--grid-clr) calc(var(--grid-lines) / 1.5),
+            transparent var(--grid-lines),
+            transparent var(--grid-size)
+        ),
+        repeating-linear-gradient(
+            to right,
+            var(--grid-clr) 0,
+            var(--grid-clr) 1px,
+            transparent 1px,
+            transparent calc(var(--grid-size) / 8)
+        ),
+        repeating-linear-gradient(
+            to bottom,
+            var(--grid-clr) 0,
+            var(--grid-clr) 1px,
+            transparent 1px,
+            transparent calc(var(--grid-size) / 8)
+        );
+    background-position: /* calc(var(--grid-lines) / -2) calc(var(--grid-lines) / -2) */ 50% 0;
+    background-color: var(--bg-clr);
+    box-shadow: inset 0 0 2em 0.5em rgba(0, 0, 0, 0.5);
+}
+
+.blueprint__info {
+    position: absolute;
+    bottom: 1.5em;
+    left: 1em;
+
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.75);
+}
+
+.blueprint__title {
+    display: flex;
+    text-transform: uppercase;
+}
+
+.blueprint__index {
+    font-size: 2.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    margin: auto 0.2rem 0 0;
+
+    color: var(--info-clr);
+    opacity: 0.7;
+}
+
+.blueprint__name {
+    font-size: 2.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin: auto 0 0 0;
+
+    color: var(--info-clr);
+    opacity: 1.0;
+}
+
+.blueprint__creator {
+    font-size: 1.2rem;
+    font-weight: 600;
+    line-height: 1.2rem;
+
+    color: var(--info-clr);
+    filter: hue-rotate(-10deg);
+    opacity: 0.6;
+}
