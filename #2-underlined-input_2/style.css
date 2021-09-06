@@ -1,0 +1,51 @@
+@charset "UTF-8";
+:root {
+  --info-clr: hsl(275, 85%, 60%);
+}
+
+main {
+  width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.center {
+  background-color: beige;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: auto;
+  padding: 1em;
+  display: grid;
+  place-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+  border-radius: 6px;
+}
+
+input {
+  background-color: transparent;
+  margin: 0.5em 1em;
+  padding: 0.5em 0.7em;
+  width: 20em;
+  position: relative;
+  border: none;
+  box-shadow: 0 2px 0 rgba(128, 128, 128, 0.5);
+  transition: box-shadow 200ms ease;
+}
+input::after {
+  content: "öwdlskodko";
+}
+input:hover {
+  box-shadow: 0 2px 0 rgba(128, 128, 128, 0.6);
+}
+input:focus {
+  box-shadow: 0 2px 0 var(--info-clr);
+  outline: none;
+}
+
+input::after {
+  content: "helloo";
+  padding: 1em;
+  background-color: red;
+}
