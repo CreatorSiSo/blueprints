@@ -1,0 +1,66 @@
+$btn-click-bg-clr: rgb(102, 102, 102);
+$width: 7px;
+
+main {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.center {
+    width: fit-content;
+    margin: auto;
+    padding: 1em;
+    font-size: 2rem;
+    font-weight: 700;
+    border-radius: 6px;
+    background-color: beige;
+}
+
+.like {
+    margin: 0;
+    padding: 0;
+    width: 2em;
+
+    cursor: pointer;
+
+    border-radius: 100vh;
+
+    background-color: rgba($btn-click-bg-clr, 0.0);
+    border: none;
+    outline: none;
+
+    svg {
+        fill: $btn-click-bg-clr;
+    }
+
+    &:focus, &:focus-within, &.focus {
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            top: -$width;
+            right: -$width;
+            bottom: -$width;
+            left: -$width;
+            border-radius: 100vh;
+            animation: opacity 500ms ease-in-out;
+        }
+
+        svg {
+            fill: hsl(280, 75%, 50%);
+        }
+    }
+}
+
+@keyframes opacity {
+    0% {
+        background-color: rgba($btn-click-bg-clr, 0.5);
+        border: 2px solid rgba($btn-click-bg-clr, 0.75);
+    }
+    100% {
+        background-color: rgba($btn-click-bg-clr, 0.0);
+        border: 2px solid rgba($btn-click-bg-clr, 0.0);
+    }
+}
